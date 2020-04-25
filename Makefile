@@ -11,7 +11,7 @@ clean:
 pdf: doc/manual.pdf
 
 zip: all
-	zip -9j e8-dist.zip e*.pa
+	zip -9j e8-dist.zip e*.pa *.md
 	fossil uv add e8-dist.zip
 	fossil uv sync
 
