@@ -12,14 +12,12 @@ with the PDP-8, OS/8, and Emacs.
 ## I Have to Say This
 
 The source code described here is copyright © 2020 by Bill Silver and is
-distributed under the terms of [the GNU General Public License, Version 3][gpl3a],
-which grants you certain rights to copy, modify, and redistribute. The
-license can also be found [here][gpl3b].  There is no express or implied
-warranty, including merchantability or fitness for a particular purpose.
-You assume full liability for the use of this code.
+distributed under the terms of [the SIMH license][slic], which grants
+you certain rights to copy, modify, and redistribute. There is no
+express or implied warranty, including merchantability or fitness for a
+particular purpose. You assume full liability for the use of this code.
 
-[gpl3a]: https://tangentsoft.com/e8/doc/trunk/COPYING.md
-[gpl3b]: http://www.gnu.org/licenses/
+[slic]: https://tangentsoft.com/e8/doc/trunk/COPYING.md
 
 
 
@@ -537,9 +535,17 @@ happened. I have never seen any errors in calculating file size, but be
 aware and report inconsistencies.
 
 
+----
 
-### PDF Version
+## License
 
-This document is also available in [PDF format][pdf], ~150 kiB.
+This document is © 2020 by Bill Silver and Warren Young. It is licensed
+under [the SIMH licnese][slic].
+
+
+
+## PDF Version
+
+This document is also available in [PDF format][pdf], ~151 kiB.
 
 [pdf]: https://tangentsoft.com/e8/uv/doc/manual.pdf
