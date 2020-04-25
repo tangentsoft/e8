@@ -6,9 +6,14 @@
 all: e8.pa e8all.pa
 
 clean:
-	rm -f e?.pa e8all.pa doc/manual.pdf
+	rm -f e?.pa e8.zip e8all.pa doc/manual.pdf
 
 pdf: doc/manual.pdf
+
+zip: all
+	zip -9j e8-dist.zip e*.pa
+	fossil uv add e8-dist.zip
+	fossil uv sync
 
 doc/manual.pdf: doc/manual.md
 	tools/mkmanpdf
