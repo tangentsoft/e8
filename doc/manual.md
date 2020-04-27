@@ -161,7 +161,7 @@ edit cursor is at an invisible position the screen cursor is placed on
 the <kbd>></kbd> to let you know.
 
 If you want to see the invisible text, put the cursor just before the <kbd>></kbd>
-and insert a newline <kbd>CR</kbd> to break the line in two. You can always
+and insert a newline (<kbd>CR</kbd>) to break the line in two. You can always
 delete the <kbd>CR</kbd> when you're done looking.
 
 ### Getting the Code Onto OS/8
@@ -281,6 +281,21 @@ many files as you like. When prompted for a filename:
 
 
 
+## Incremental Search (^S)
+
+Enter the search string at the mode-line prompt. After each character the
+cursor will advance to matching text if any, or ring the console bell and
+reject the character if not. You may enter:
+
+| Key         | Action                                           |
+|-------------|--------------------------------------------------|
+| `CR`        | terminate search with mark set to starting point |
+| `^S` or `^F`| find the next occurrence of the search string    |
+| `BS`        | erase last search character and back up          |
+| `^N`        | match `CR` (newline) in search text              |
+
+
+
 ## Query-Replace (ALT-%)
 
 When entering strings at the `REPLACE` and `WITH` prompts:
@@ -361,7 +376,7 @@ letters to be all the same. For example, <kbd>^X</kbd> <kbd>^S</kbd>,
 | `^O`                  | Open new line (CR, ^B)                                 |
 | `^P`                  | Beginning of previous line                             |
 | `^Q`                  | Insert next typed char as is                           |
-| `^S` or `ALT-S`       | Incremental search (case sensitive): <ul><li><kbd>CR</kbd> terminates search with mark set to starting point</li><li><kbd>^F</kbd> or <kbd>^S</kbd> finds the next occurrence of the search string</li><li><kbd>BS</kbd> erases last search character and backs up</li><li><kbd>^N</kbd> matches `CR` (newline) in search text</li></ul> |
+| `^S` or `ALT-S`       | Incremental search (case sensitive)                    |
 | `^V`                  | Forward one screen                                     |
 | `^W`                  | Write region (text between cursor and mark) to the file `CLIP.E8` and delete the text in the region. |
 | `^Y`                  | Insert the file `CLIP.E8` at the cursor                |
