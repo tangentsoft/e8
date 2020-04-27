@@ -9,7 +9,7 @@ with the PDP-8, OS/8, and Emacs.
 
 
 
-## I Have to Say This
+## Copyright and License
 
 The source code described here is copyright © 2020 by Bill Silver and is
 distributed under the terms of [the SIMH license][slic], which grants
@@ -144,14 +144,25 @@ you like, as long as
 
     SCRWD * (SCRHT + 1) <= 3968
 
-There is no limit on the size of lines that can be in files and edited,
-but you can only see the first SCRWD-1 characters of each line. What you
-can’t see is there and not lost.
-
 The symbol `MEMSIZ` specifies the number of fields installed. 3 ≤
 `MEMSIZ` ≤ 8
 
+### Lines Longer than the Screen Width
 
+There is no limit on the size of lines that can be in files and edited,
+but you can only see the first SCRWD-1 characters of each line. What you
+can’t see is there and not lost. If the length of any line is >= SCRWD,
+E8 will display a <kbd>></kbd> in the last column to let you know that
+there are more characters that you can't see.
+
+Likewise, you can place the edit cursor (where you insert and delete
+characters) anywhere in the file, even at invisible positions. If the
+edit cursor is at an invisible position the screen cursor is placed on
+the <kbd>></kbd> to let you know.
+
+If you want to see the invisible text, put the cursor just before the <kbd>></kbd>
+and insert a newline <kbd>CR</kbd> to break the line in two. You can always
+delete the <kbd>CR</kbd> when you're done looking.
 
 ### Getting the Code Onto OS/8
 
@@ -193,7 +204,7 @@ configurations.
     .R E8
 
 If you are using the default setup, omit `E8DEFS`. The screen will start
-cleared expect for the mode line showing an empty text buffer.
+cleared expect for the mode lines showing an empty text buffer.
 
 
 
@@ -227,21 +238,21 @@ never seen this happen, but just in case.
 
 ## Mode Lines
 
-The E8 mode line looks like this:
+The E8 mode lines look like this:
 
-    -**- EF.PA       5123
-    FILE: EE.PA
+    -**- EFBASE.PA   5123
+    SEARCH: TOP,
 
 The `-**-` on the first line means the buffer has been changed.
 
-Following this (`EF.PA` in this example) is the current file name, if
+Following this (`E8BASE.PA` in this example) is the current file name, if
 any.
 
-The number after that is the count of characters in the buffer. (FIXME:
-what radix?)
+The number after that is the count of characters in the buffer (decimal).
 
-The line below is the input prompt, here asking for a new file name to
-open, with the user giving `EE.PA` in this example.
+The line below shows occasional status or state displays, and accepts your
+input for certain commands. In the example shown, the incremental search
+command prompts with `SEARCH:` and you enter a search string, here `TOP,`.
 
 
 
@@ -330,9 +341,7 @@ Most commands are equivalent or nearly so to Emacs, but some are not, so
 beware. The <kbd>ALT</kbd> commands are case-insensitive. The
 <kbd>^X</kbd> commands consider control, uppercase, and lowercase
 letters to be all the same. For example, <kbd>^X</kbd> <kbd>^S</kbd>,
-<kbd>^X</kbd> <kbd>S</kbd>, and <kbd>^X</kbd> <kbd>s</kbd> are all the same. Highlighted
-characters (not including serial flow control) are captured by the Linux
-console or SimH so use the <kbd>ALT</kbd> version.
+<kbd>^X</kbd> <kbd>S</kbd>, and <kbd>^X</kbd> <kbd>s</kbd> are all the same.
 
 | Key/Sequence          | Meaning                                                |
 |-----------------------|--------------------------------------------------------|
@@ -352,7 +361,7 @@ console or SimH so use the <kbd>ALT</kbd> version.
 | `^O`                  | Open new line (CR, ^B)                                 |
 | `^P`                  | Beginning of previous line                             |
 | `^Q`                  | Insert next typed char as is                           |
-| `^S` or `ALT-S`       | Incremental search (case sensitive): <ul><li><kbd>CR</kbd> terminates search with mark set to starting point</li><li><kbd>^F</kbd> finds the next occurrence of the search string</li><li><kbd>BS</kbd> erases last search character and backs up</li><li><kbd>^N</kbd> matches `CR` (newline) in search text</li></ul> |
+| `^S` or `ALT-S`       | Incremental search (case sensitive): <ul><li><kbd>CR</kbd> terminates search with mark set to starting point</li><li><kbd>^F</kbd> or <kbd>^S</kbd> finds the next occurrence of the search string</li><li><kbd>BS</kbd> erases last search character and backs up</li><li><kbd>^N</kbd> matches `CR` (newline) in search text</li></ul> |
 | `^V`                  | Forward one screen                                     |
 | `^W`                  | Write region (text between cursor and mark) to the file `CLIP.E8` and delete the text in the region. |
 | `^Y`                  | Insert the file `CLIP.E8` at the cursor                |
@@ -391,8 +400,8 @@ option because it may not interact properly with every terminal, and
 it’s usually not needed. It also has to set a terminal scrolling window,
 which it has to undo by resetting the terminal on exit. So there are
 opportunities for trouble. It’s been tested and works with MobaXterm.
-You can see the difference by throttling the simulator down to 300K or
-so.
+If you're using SimH you can see the difference by throttling the simulator
+down to 300K or so.
 
 To enable VT-100 scrolling, put `FSCROL=0` in an `E8DEFS.PA` file. The
 terminal must implement the following escape sequences:
@@ -445,7 +454,7 @@ to the beginning, which takes slightly over 1 second.
 
 Text buffer memory looks like this:
 
-     TODO: insert SVG memory map diagram
+![e8Buffer](./e8Buffer.svg)
 
 Almost all actions operate on text that is exclusively either ahead of
 or behind the point, the characters of which are always contiguous in
@@ -478,7 +487,11 @@ Once TOS is established, text lines are processed one at a time and
 independently. Each line is first rendered to a one-line buffer in field
 1, whose size is the width of the screen (`SCRWD`). Rendering converts
 tabs to spaces, adds the `^` prefix to control characters, and enforces
-the `SCRWD` limit on visible text.
+the `SCRWD-1` limit on visible text. The rendered characters are
+terminated with one of two codes, both negative, indicating that the
+line does or does not extend beyond the limit. Rendering is the most
+time-consuming part of screen update, so the inner loop is carefully
+crafted for speed.
 
 Each rendered line is then compared to the appropriate line of the
 screen copy. If a mismatch is found at some position, the screen cursor
@@ -488,9 +501,24 @@ characters have been sent and copied, if the screen copy shows that the
 rest of the screen line is not blank, an escape sequence is sent to
 clear to end of line.
 
+Each line of the screen copy also has two negative termination codes,
+diffeent from the render codes, that indicate whether a <kbd>></kbd>
+does or does not appear in the last column. The render and screen
+termination codes tell whether <kbd>></kbd> needs to be added, removed,
+or left alone.
+
+The inner loop is optimized for characters comparing equal and is only
+nine memory cycles on an 8/I. The use of distinct termination codes avoids
+having to also test for end of render or screen line in the inner loop.
+
 After the text buffer has been processed, the two mode lines at the
 bottom of the screen are rendered and updated in the same way. Finally,
 the screen cursor is set to the point position.
+
+Screen update can be aborted safely after each line. If a character is
+received on the console terminal during an update, it is aborted. The
+screen will settle on the correct display as soon as update catches up
+with character input.
 
 Every character written to the screen goes through this update process.
 Nowhere is a character written directly. The only direct write to TTY
@@ -533,7 +561,6 @@ one extra asked for allows some overwrite to be tolerated without harm,
 and the calculated/actual values will be off by one to show what
 happened. I have never seen any errors in calculating file size, but be
 aware and report inconsistencies.
-
 
 ----
 
