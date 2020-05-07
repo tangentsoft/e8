@@ -517,7 +517,7 @@ rest of the screen line is not blank, an escape sequence is sent to
 clear to end of line.
 
 Each line of the screen copy also has two negative termination codes,
-diffeent from the render codes, that indicate whether a <kbd>></kbd>
+different from the render codes, that indicate whether a <kbd>></kbd>
 does or does not appear in the last column. The render and screen
 termination codes tell whether <kbd>></kbd> needs to be added, removed,
 or left alone.
@@ -550,7 +550,7 @@ entire rest of field 1 (31 pages, 3968 words).
 
 Every subroutine that implements an editor command skip-returns if
 successful, even if failure is impossible (e.g. move to end of buffer
-can’t fail). Many other utility subroutines also skip- return on
+can’t fail). Many other utility subroutines also skip-return on
 success. This allows what in modern high-level languages would be a
 catch-throw mechanism—failures can unwind up to whatever code can deal
 with them, and unwinding all the way to top level just rings the console
