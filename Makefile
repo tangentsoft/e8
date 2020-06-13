@@ -16,7 +16,7 @@ zip: all
 	fossil uv sync
 
 doc/manual.pdf: doc/manual.md
-	tools/mkmanpdf
+	tools/mkmanpdf doc/manual
 
 e8.pa: e8all.pa
 	@tools/splitpal $<
