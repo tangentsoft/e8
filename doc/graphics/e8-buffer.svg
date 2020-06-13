@@ -10,7 +10,11 @@
   }
   g#arrow-labels {
    text-anchor: end;
-  }</style>
+  }
+  g#box-labels text {
+   text-anchor: middle;
+  }
+ </style>
  <metadata>
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -46,15 +50,13 @@
   <path d="m154.5 25.539h15.733v0.666h-15.733zm14.4-3.667 8 4-8 4z" inkscape:connector-curvature="0"/>
  </g>
  <g inkscape:groupmode="layer" inkscape:label="Text">
-  <g transform="translate(357.35 114.8)">
-   <g class="small" transform="translate(2.5447)">
-    <text x="-170.95468" y="-42.125221" xml:space="preserve"><tspan x="-170.95468" y="-42.125221" sodipodi:role="line">text before</tspan></text>
-    <text x="-153.50546" y="-30.548826" xml:space="preserve"><tspan x="-153.50546" y="-30.548826" sodipodi:role="line">point</tspan></text>
+  <g id="box-labels" transform="translate(220 80)">
+   <g class="small">
+    <text><tspan x="0" y="0" sodipodi:role="line">text before</tspan></text>
+    <text><tspan x="0" y="12" sodipodi:role="line">point</tspan></text>
+    <text><tspan x="0" y="150" sodipodi:role="line">text after</tspan></text>
+    <text><tspan x="0" y="162" sodipodi:role="line">point</tspan></text>
    </g>
-  </g>
-  <g class="small" transform="translate(350.83 175.25)">
-   <text x="-159.58897" y="56.917282" style="line-height:1.25" xml:space="preserve"><tspan x="-159.58897" y="56.917282" sodipodi:role="line">text after</tspan></text>
-   <text x="-145.74474" y="68.493675" style="line-height:1.25" xml:space="preserve"><tspan x="-145.74474" y="68.493675" sodipodi:role="line">point</tspan></text>
   </g>
   <g id="arrow-labels" transform="translate(28)">
    <text x="124" y="209.96471">point</text>
