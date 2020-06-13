@@ -1,1 +1,66 @@
-<svg width="280" height="286" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="clip0"><path d="M500 217 780 217 780 503 500 503Z" fill-rule="evenodd" clip-rule="evenodd"/></clipPath><image width="64" height="64" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABAAEADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8qq/qoor+VegD+qiiiigAoor+VegAr+qiiigAooooA/lXr+qiiv5V6ACv6qKKKACiiigAoor+VegAr+qiiigD+Vev6qKK/lXoA/qoooooA/lXr+qiiigAooooAKKKKAP5V6/qoor+VegD/9k=" preserveAspectRatio="none" id="img1"></image><pattern width="64" height="64" patternUnits="userSpaceOnUse" id="pattern2" overflow="hidden" patternTransform="matrix(0.125 0 0 0.125 680 352)"><use width="100%" height="100%" xlink:href="#img1"></use></pattern></defs><g clip-path="url(#clip0)" transform="translate(-500 -217)"><rect x="501" y="218" width="278" height="284" fill="#FFFFFF"/><rect x="683.5" y="237.5" width="77" height="240" stroke="#000000" stroke-width="1.33333" stroke-miterlimit="8" fill="#FFFFFF"/><rect x="683.5" y="352.5" width="77" height="68" stroke="#000000" stroke-width="1.33333" stroke-miterlimit="8" fill="url(#pattern2)"/><rect x="578" y="409" width="76" height="29" fill="#FFFFFF"/><text font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="16" transform="translate(615.513 428)">point</text><rect x="578" y="341" width="76" height="30" fill="#FFFFFF"/><text font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="16" transform="translate(626.333 361)">gap</text><rect x="501" y="226" width="153" height="30" fill="#FFFFFF"/><text font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="16" transform="translate(525.953 246)">beginning of buffer</text><rect x="501" y="466" width="153" height="30" fill="#FFFFFF"/><text font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="16" transform="translate(564.953 486)">end of buffer<tspan font-size="13" x="131.313" y="-40">text after </tspan><tspan font-size="13" x="142.4" y="-24">point</tspan><tspan font-size="13" x="126.397" y="-194">text before </tspan><tspan font-size="13" x="142.397" y="-178">point</tspan></text><path d="M654.5 241.167 676.633 241.167 676.633 241.833 654.5 241.833ZM675.3 237.5 683.3 241.5 675.3 245.5Z"/><path d="M654.5 356.167 670.233 356.167 670.233 356.833 654.5 356.833ZM668.9 352.5 676.9 356.5 668.9 360.5Z"/><path d="M654.5 424.167 670.233 424.167 670.233 424.833 654.5 424.833ZM668.9 420.5 676.9 424.5 668.9 428.5Z"/><path d="M654.5 481.167 670.233 481.167 670.233 481.833 654.5 481.833ZM668.9 477.5 676.9 481.5 668.9 485.5Z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="286" overflow="hidden" inkscape:version="1.0 (4035a4f, 2020-05-01)" sodipodi:docname="e8-buffer.svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <style>text {
+   font-family: sans-serif;
+   font-size: 14px;
+   line-height: 0%;
+  }
+  g.small text {
+   font-size: 12px;
+  }
+  g#arrow-labels {
+   text-anchor: end;
+  }</style>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <sodipodi:namedview bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" inkscape:current-layer="g3301" inkscape:cx="73.881121" inkscape:cy="119.46224" inkscape:document-rotation="0" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="1395" inkscape:window-maximized="1" inkscape:window-width="2560" inkscape:window-x="0" inkscape:window-y="23" inkscape:zoom="3.109776" objecttolerance="10" pagecolor="#ffffff" showgrid="false"/>
+ <defs>
+  <pattern id="Wavy" width="30.066020" height="5.1805778" inkscape:collect="always" inkscape:stockid="Wavy" patternUnits="userSpaceOnUse">
+   <path d="m7.597 0.061c-2.518-0.248-4.941 0.241-7.607 1.727v1.273c2.783-1.63 5.183-2.009 7.482-1.781 2.298 0.228 4.497 1.081 6.781 1.938 4.567 1.713 9.551 3.458 15.813-0.157l-4e-3 -1.273c-6.44 3.709-10.816 1.982-15.371 0.273-2.278-0.854-4.576-1.75-7.094-2z"/>
+  </pattern>
+ </defs>
+ <g inkscape:groupmode="layer" inkscape:label="Background" opacity=".4">
+  <g transform="translate(-500,-217)" clip-path="url(#clip0)" fill="#fff">
+   <rect x="501" y="218" width="278" height="284"/>
+   <rect x="578" y="409" width="76" height="29"/>
+   <rect x="578" y="341" width="76" height="30"/>
+   <rect x="501" y="226" width="153" height="30"/>
+   <rect x="501" y="466" width="153" height="30"/>
+  </g>
+ </g>
+ <g stroke="#000" stroke-miterlimit="8" stroke-width="1.3333" inkscape:groupmode="layer" inkscape:label="Chart" opacity=".8">
+  <rect x="183.5" y="24.5" width="77" height="240" fill="#fff"/>
+  <rect transform="translate(-500,-217)" x="683.5" y="352.5" width="77" height="68" fill="url(#Wavy)"/>
+ </g>
+ <g inkscape:groupmode="layer" inkscape:label="Arrows">
+  <path d="m154.5 135.41h15.733v0.666h-15.733zm14.4-3.667 8 4-8 4z" inkscape:connector-curvature="0"/>
+  <path d="m154.5 205.17h15.733v0.666h-15.733zm14.4-3.667 8 4-8 4z" inkscape:connector-curvature="0"/>
+  <path transform="translate(-500,-217)" d="m654.5 481.17h15.733v0.666h-15.733zm14.4-3.667 8 4-8 4z" inkscape:connector-curvature="0"/>
+  <path d="m154.5 25.539h15.733v0.666h-15.733zm14.4-3.667 8 4-8 4z" inkscape:connector-curvature="0"/>
+ </g>
+ <g inkscape:groupmode="layer" inkscape:label="Text">
+  <g transform="translate(357.35 114.8)">
+   <g class="small" transform="translate(2.5447)">
+    <text x="-170.95468" y="-42.125221" xml:space="preserve"><tspan x="-170.95468" y="-42.125221" sodipodi:role="line">text before</tspan></text>
+    <text x="-153.50546" y="-30.548826" xml:space="preserve"><tspan x="-153.50546" y="-30.548826" sodipodi:role="line">point</tspan></text>
+   </g>
+  </g>
+  <g class="small" transform="translate(350.83 175.25)">
+   <text x="-159.58897" y="56.917282" style="line-height:1.25" xml:space="preserve"><tspan x="-159.58897" y="56.917282" sodipodi:role="line">text after</tspan></text>
+   <text x="-145.74474" y="68.493675" style="line-height:1.25" xml:space="preserve"><tspan x="-145.74474" y="68.493675" sodipodi:role="line">point</tspan></text>
+  </g>
+  <g id="arrow-labels" transform="translate(28)">
+   <text x="124" y="209.96471">point</text>
+   <text x="124" y="140.34303">gap</text>
+   <text x="124" y="29.964699">beginning of buffer</text>
+   <text x="124" y="267.5318">end of buffer</text>
+  </g>
+ </g>
+</svg>
